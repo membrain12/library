@@ -10,7 +10,34 @@
 <body>
     <h1>Personal Library</h1>
     <div class="book-container">
-        
+        <button id="addBook">Add Book</button>
     </div>
+
+    <!--<dialog>-->
+        <form>
+            <p>
+              <label>
+                Title:
+                <input type="text">
+              </label>
+              <label>
+                Author:
+                <input type="text">
+              </label>
+              <label>
+                Pages:
+                <input type="number" min="1">
+              </label>
+              <button>Read</button>
+            </p>
+            <div>
+                <button id="confirmBtn" value="default">Confirm</button>
+                <button value="cancel" formmethod="dialog">Cancel</button>
+              
+            </div>
+          </form>
+    <!--</dialog>-->
+    
+    </dialog>
 </body>
 </html>
