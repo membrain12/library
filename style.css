@@ -30,6 +30,12 @@ h1 {
 .card {
     border: 1px solid #000;
     height: 200px;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
 }
 
 dialog {
