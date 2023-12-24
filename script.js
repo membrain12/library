@@ -13,6 +13,7 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
+//remove these sections when done testing
 const hp = new Book("Harry Potter and the Sorceror's Stone", "JK Rowling", 1200, true);
 const hp2 = new Book("Harry Potter and the Chamber of Secrets", "JK Rowling", 1200, false);
 
@@ -30,12 +31,17 @@ function displayBooks() {
     let author = document.createElement('p');
     let pages = document.createElement('p');
     let read = document.createElement('button');
+    let removeBtn = document.createElement('button');
+
+
 
     title.textContent = myLibrary[i].title;
     author.textContent = myLibrary[i].author;
     pages.textContent = myLibrary[i].pages + " pages";
 
     read.classList.add("readButton");
+    removeBtn.classList.add("removeBtn");
+    removeBtn.textContent = "Remove Book";
 
     if (myLibrary[i].read == true) {
       read.textContent = "Read";
@@ -66,6 +72,7 @@ function displayBooks() {
     book.appendChild(author);
     book.appendChild(pages);
     book.appendChild(read);
+    book.appendChild(removeBtn);
 
     book.classList.add("book-card");
     bookContainer.appendChild(book);

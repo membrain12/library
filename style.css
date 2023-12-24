@@ -37,6 +37,7 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 8px;
+    text-align: center;
 }
 
 #addBook {
@@ -74,12 +75,18 @@ form {
     gap: 16px;
 }
 
-.readButton {
+.readButton,
+.removeBtn {
     width: 80%;
     border: 1px solid #000;
     height: 32px;
     font-weight: bold;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.removeBtn:hover {
+    background-color: #ff5050;
 }
 
 .readStyle {
