@@ -73,3 +73,19 @@ form {
     flex-flow: column;
     gap: 16px;
 }
+
+.readButton {
+    width: 80%;
+    border: 1px solid #000;
+    height: 32px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.readStyle {
+    background-color: #66ff33;
+}
+
+.notReadStyle {
+    background-color: #ff3300;
+}

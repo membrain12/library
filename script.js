@@ -33,10 +33,33 @@ function displayBooks() {
 
     title.textContent = myLibrary[i].title;
     author.textContent = myLibrary[i].author;
+    pages.textContent = myLibrary[i].pages + " pages";
+    
+    read.textContent = "Read";
+
+    read.classList.add("readButton");
+    read.classList.add("readStyle");
+
+    read.addEventListener('click', () => {
+      if (read.classList.contains('readStyle')) {
+        read.textContent = "Not Read";
+        read.classList.remove("readStyle");
+        
+        
+        read.classList.add("notReadStyle");
+      } else {
+        read.textContent = "Read";
+        read.classList.remove("notReadStyle");
+
+        read.classList.add("readStyle");
+      }
+    });
     book.appendChild(title);
     book.appendChild(author);
+    book.appendChild(pages);
+    book.appendChild(read);
 
-    book.style.class
+    book.classList.add("book-card");
     bookContainer.appendChild(book);
   }
 }
