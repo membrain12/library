@@ -39,6 +39,17 @@ h1 {
     padding: 8px;
 }
 
+#addBook {
+    position: fixed;
+    bottom: 32px;
+    right: 12px;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    background-color: steelblue;
+}
+
 dialog {
     position: absolute;
     margin: auto;
