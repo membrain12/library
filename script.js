@@ -11,6 +11,7 @@ function Book(title, author, pages, read) {
   this.author = author
   this.pages = pages
   this.read = read
+  this.index = -1;
 }
 
 //remove these sections when done testing
@@ -25,6 +26,8 @@ function addBookToLibrary() {
 }
 
 function displayBooks() {
+  bookContainer.replaceChildren();
+  
   for (let i = 0; i < myLibrary.length; i++) {
     let book = document.createElement('div');
     let title = document.createElement('p')
@@ -33,11 +36,12 @@ function displayBooks() {
     let read = document.createElement('button');
     let removeBtn = document.createElement('button');
 
-
+    myLibrary[i].index = i;
 
     title.textContent = myLibrary[i].title;
     author.textContent = myLibrary[i].author;
     pages.textContent = myLibrary[i].pages + " pages";
+
 
     read.classList.add("readButton");
     removeBtn.classList.add("removeBtn");
@@ -56,7 +60,7 @@ function displayBooks() {
         read.textContent = "Not Read";
         read.classList.remove("readStyle");
         
-        myLibrary.read = false;
+        myLibrary[i].read = false;
 
         read.classList.add("notReadStyle");
       } else {
@@ -68,6 +72,12 @@ function displayBooks() {
         read.classList.add("readStyle");
       }
     });
+
+    removeBtn.addEventListener('click', () => {
+      myLibrary.splice(i, 1);
+      displayBooks();
+    });
+
     book.appendChild(title);
     book.appendChild(author);
     book.appendChild(pages);
