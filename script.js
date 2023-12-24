@@ -50,11 +50,14 @@ function displayBooks() {
         read.textContent = "Not Read";
         read.classList.remove("readStyle");
         
-        
+        myLibrary.read = false;
+
         read.classList.add("notReadStyle");
       } else {
         read.textContent = "Read";
         read.classList.remove("notReadStyle");
+
+        myLibrary[i].read = true;
 
         read.classList.add("readStyle");
       }
