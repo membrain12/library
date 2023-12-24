@@ -14,7 +14,7 @@ function Book(title, author, pages, read) {
 }
 
 const hp = new Book("Harry Potter and the Sorceror's Stone", "JK Rowling", 1200, true);
-const hp2 = new Book("Harry Potter and the Chamber of Secrets", "JK Rowling", 1200, true);
+const hp2 = new Book("Harry Potter and the Chamber of Secrets", "JK Rowling", 1200, false);
 
 myLibrary.push(hp);
 myLibrary.push(hp2);
@@ -34,11 +34,16 @@ function displayBooks() {
     title.textContent = myLibrary[i].title;
     author.textContent = myLibrary[i].author;
     pages.textContent = myLibrary[i].pages + " pages";
-    
-    read.textContent = "Read";
 
     read.classList.add("readButton");
-    read.classList.add("readStyle");
+
+    if (myLibrary[i].read == true) {
+      read.textContent = "Read";
+      read.classList.add('readStyle');
+    } else {
+      read.textContent = "Not Read";
+      read.classList.add('notReadStyle');
+    }
 
     read.addEventListener('click', () => {
       if (read.classList.contains('readStyle')) {
