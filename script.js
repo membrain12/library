@@ -24,10 +24,32 @@ cancelBtn.addEventListener('click', () => {
   dialog.close();
 });
 
+readBtn.addEventListener('click', () => {
+  if (readBtn.classList.contains('readStyle')) {
+    readBtn.textContent = "Not Read";
+    readBtn.classList.remove("readStyle");
+
+    readBtn.classList.add("notReadStyle");
+  } else {
+    readBtn.textContent = "Read";
+    readBtn.classList.remove("notReadStyle");
+
+    readBtn.classList.add("readStyle");
+  }
+});
+
 function clearForm() {
   bookTitle.value = "";
   bookAuthor.value = "";
   bookPages.value = 0;
+
+  if (readBtn.classList.contains('notReadStyle')) {
+    
+    readBtn.classList.remove("notReadStyle");
+
+    readBtn.classList.add("readStyle");
+  }
+  readBtn.textContent = "Read";
 }
 
 const myLibrary = [];
@@ -50,9 +72,16 @@ myLibrary.push(hp);
 myLibrary.push(hp2);
 
 function addBookToLibrary() {
+  let tempRead = true;
   
+  if (readBtn.textContent != "Read") {
+    tempRead = false;
+  }
+
+  console.log(tempRead.value);
   
-  let book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, true);
+  let book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, tempRead);
+  clearForm();
   myLibrary.push(book);
 }
 

@@ -73,17 +73,37 @@ input:focus {
 form {
     display: flex;
     flex-flow: column;
+    align-items: center;
     gap: 16px;
 }
 
 .readButton,
-.removeBtn {
+.removeBtn,
+#readBtn {
     width: 80%;
     border: 1px solid #000;
     height: 32px;
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
+}
+
+#confirmBtn,
+#cancelBtn {
+    width: 50%;
+    border: 1px solid #000;
+    height: 32px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttons {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
 .removeBtn:hover {
