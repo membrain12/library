@@ -49,6 +49,7 @@ h1 {
     height: 4rem;
     border: none;
     background-color: steelblue;
+    cursor: pointer;
 }
 
 dialog {

@@ -10,22 +10,17 @@
 <body>
     <h1>Personal Library</h1>
     <div class="book-container">
-      <div class="book-card">
-        <div>Harry Potter and the Sorceror's Stone and a bunch of other words</div>
-        <div>Dorothy Higenbottom the third</div>
-        <div>pages</div>
-        <button class="readButton">read</button>
-      </div>
-      
-      <button id="addBook">Add Book</button>
+  
     </div>
+
+    <button id="addBook">Add Book</button>
 
     <dialog>
         <form>
             <p>
               <label>
                 Title:
-                <input type="text">
+                <input type="text" id="bookTitle">
               </label>
               <label>
                 Author:
@@ -38,8 +33,8 @@
               <button>Read</button>
             </p>
             <div>
-                <button id="confirmBtn" value="default">Confirm</button>
-                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirmBtn" type="button">Confirm</button>
+                <button value="cancel" type="button">Cancel</button>
               
             </div>
           </form>

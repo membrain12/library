@@ -1,8 +1,22 @@
 const addBookBtn = document.querySelector('#addBook');
+const confirmBtn = document.querySelector('#confirmBtn');
 const dialog = document.querySelector('dialog');
 const bookContainer = document.querySelector('.book-container');
+const bookTitle = document.querySelector('#bookTitle');
 
-addBookBtn.addEventListener('click', addBookToLibrary);
+addBookBtn.addEventListener('click', () => {
+  dialog.showModal();
+});
+
+confirmBtn.addEventListener('click', () => {
+  addBookToLibrary();
+  dialog.close();
+});
+
+function noSubmit(event) {
+  console.log("hello");
+  event.preventDefault;
+}
 
 const myLibrary = [];
 
@@ -22,7 +36,7 @@ myLibrary.push(hp);
 myLibrary.push(hp2);
 
 function addBookToLibrary() {
-  dialog.showModal();
+  console.log(bookTitle.value);
 }
 
 function displayBooks() {
