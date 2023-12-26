@@ -1,10 +1,12 @@
 const addBookBtn = document.querySelector('#addBook');
 const confirmBtn = document.querySelector('#confirmBtn');
+const cancelBtn = document.querySelector('#cancelBtn');
 const dialog = document.querySelector('dialog');
 const bookContainer = document.querySelector('.book-container');
 const bookTitle = document.querySelector('#bookTitle');
 const bookAuthor = document.querySelector('#bookAuthor');
 const bookPages = document.querySelector('#bookPages');
+const readBtn = document.querySelector('#readBtn');
 
 addBookBtn.addEventListener('click', () => {
   dialog.showModal();
@@ -17,7 +19,10 @@ confirmBtn.addEventListener('click', () => {
   displayBooks();
 });
 
-
+cancelBtn.addEventListener('click', () => {
+  clearForm();
+  dialog.close();
+});
 
 function clearForm() {
   bookTitle.value = "";
@@ -34,6 +39,8 @@ function Book(title, author, pages, read) {
   this.read = read
   this.index = -1;
 }
+
+//need to change read button in form on click while changing the value for new book as well
 
 //remove these sections when done testing
 const hp = new Book("Harry Potter and the Sorceror's Stone", "JK Rowling", 1200, true);
