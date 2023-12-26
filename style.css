@@ -77,6 +77,13 @@ form {
     gap: 16px;
 }
 
+form > p {
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+}
+
 .readButton,
 .removeBtn,
 #readBtn {
